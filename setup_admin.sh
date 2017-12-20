@@ -97,9 +97,9 @@ then
 	source ~/.bashrc
 
 	# install cudnn
-	# login to nvidia developer and download https://developer.nvidia.com/compute/machine-learning/cudnn/secure/v5.1/prod/8.0/cudnn-8.0-linux-x64-v5.1-tgz
+	# login to nvidia developer and download https://developer.nvidia.com/compute/machine-learning/cudnn/secure/v6.0/prod/8.0/cudnn-8.0-linux-x64-v6.0-tgz
 	cd ~/Downloads
-	tar xvzf cudnn-8.0-linux-x64-v5.1.tgz
+	tar xvzf cudnn-8.0-linux-x64-v6.0.tgz
 	sudo cp -P cuda/include/cudnn.h /usr/local/cuda/include
 	sudo cp -P cuda/lib64/libcudnn* /usr/local/cuda/lib64
 	sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
@@ -109,5 +109,5 @@ then
 	# clean up downloaded files
 	sudo rm -rf cuda
 	sudo rm cuda-repo-ubuntu1604-8-0-local_8.0.44-1_amd64-deb
-	sudo rm cudnn-8.0-linux-x64-v5.1.tgz
+	sudo rm cudnn-8.0-linux-x64-v6.0.tgz
 fi
