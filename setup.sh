@@ -12,6 +12,7 @@ export DEBIAN_FRONTEND=noninteractive
 cd ~
 mkdir git
 mkdir data
+mkdir temp
 mkdir go
 cd go
 mkdir workspace
