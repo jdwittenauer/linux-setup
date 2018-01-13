@@ -68,6 +68,7 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i --force-depends google-chrome-stable_current_amd64.deb
 sudo apt-get -y update
 sudo apt-get -y install -f
+printf "\nexport BROWSER=google-chrome" >> ~/.bashrc
 
 # install inconsolata font
 sudo apt-get -y install fonts-inconsolata
