@@ -49,6 +49,7 @@ pip install pattern
 pip install flask-socketio
 pip install pystan
 pip install fbprophet
+pip install tpot
 
 # install Tensorflow
 if [ "$GPU" = "TRUE" ]
