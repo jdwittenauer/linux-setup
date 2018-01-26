@@ -126,8 +126,8 @@ then
 	# display line numbers
 	cd ~/Downloads
 	wget "https://download-cf.jetbrains.com/python/pycharm-community-2017.3.3.tar.gz"
-	tar -xzf pycharm-community-2016.3.1.tar.gz
-	mv ~/Downloads/pycharm-community-2016.3.1 ~/pycharm
+	tar -xzf pycharm-community-2017.3.3.tar.gz
+	mv ~/Downloads/pycharm-community-2017.3.3 ~/pycharm
 	cd ~/pycharm/bin
 	bash pycharm.sh
 
@@ -140,7 +140,7 @@ then
 	# display line numbers
 	cd ~/Downloads
 	wget "https://download-cf.jetbrains.com/idea/ideaIC-2017.3.3.tar.gz"
-	tar -xzf ideaIC-2016.3.1.tar.gz
+	tar -xzf ideaIC-2017.3.3.tar.gz
 	mv ~/Downloads/idea-IC-163.9166.29 ~/idea
 	cd ~/idea/bin
 	bash idea.sh
