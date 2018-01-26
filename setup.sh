@@ -25,8 +25,8 @@ source ~/.bashrc
 
 # install Anaconda and update packages
 cd ~/Downloads
-wget "https://repo.continuum.io/archive/Anaconda2-4.2.0-Linux-x86_64.sh"
-bash Anaconda2-4.2.0-Linux-x86_64.sh -b -p $HOME/anaconda
+wget "https://repo.continuum.io/archive/Anaconda3-5.0.1-Linux-x86_64.sh"
+bash Anaconda3-5.0.1-Linux-x86_64.sh -b -p $HOME/anaconda
 printf "\nexport PATH=\$PATH:\$HOME/anaconda/bin" >> ~/.bashrc
 source ~/.bashrc
 conda update -y conda
@@ -54,9 +54,9 @@ pip install tpot
 # install Tensorflow
 if [ "$GPU" = "TRUE" ]
 then
-	pip install --upgrade https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-1.3.0-cp27-none-linux_x86_64.whl
+	pip install --upgrade https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-1.4.1-cp36-cp36m-linux_x86_64.whl
 else
-	pip install --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.3.0-cp27-none-linux_x86_64.whl
+	pip install --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.4.1-cp36-cp36m-linux_x86_64.whl
 fi
 
 # create Tensorflow test file
@@ -125,7 +125,7 @@ then
 	# set interpreter to Anaconda
 	# display line numbers
 	cd ~/Downloads
-	wget "https://download.jetbrains.com/python/pycharm-community-2016.3.1.tar.gz"
+	wget "https://download-cf.jetbrains.com/python/pycharm-community-2017.3.3.tar.gz"
 	tar -xzf pycharm-community-2016.3.1.tar.gz
 	mv ~/Downloads/pycharm-community-2016.3.1 ~/pycharm
 	cd ~/pycharm/bin
@@ -139,7 +139,7 @@ then
 	# install and configure go plugin
 	# display line numbers
 	cd ~/Downloads
-	wget "https://download.jetbrains.com/idea/ideaIC-2016.3.1.tar.gz"
+	wget "https://download-cf.jetbrains.com/idea/ideaIC-2017.3.3.tar.gz"
 	tar -xzf ideaIC-2016.3.1.tar.gz
 	mv ~/Downloads/idea-IC-163.9166.29 ~/idea
 	cd ~/idea/bin

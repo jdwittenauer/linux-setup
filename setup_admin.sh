@@ -36,11 +36,11 @@ sudo apt-get -y install openjdk-8-jre openjdk-8-jdk
 sudo apt-get -y install gfortran
 
 # install Scala
-wget "http://downloads.lightbend.com/scala/2.12.1/scala-2.12.1.deb"
-sudo dpkg -i scala-2.12.1.deb
+wget "http://downloads.lightbend.com/scala/2.12.4/scala-2.12.4.deb"
+sudo dpkg -i scala-2.12.4.deb
 sudo apt-get -y update
 sudo apt-get -y install scala
-rm -rf scala-2.12.1.deb
+rm -rf scala-2.12.4.deb
 
 # install sbt
 echo "deb https://dl.bintray.com/sbt/debian /" | sudo tee -a /etc/apt/sources.list.d/sbt.list
@@ -88,8 +88,9 @@ then
 
 	# install cuda
 	cd ~/Downloads
-	wget "https://developer.nvidia.com/compute/cuda/8.0/prod/local_installers/cuda-repo-ubuntu1604-8-0-local_8.0.44-1_amd64-deb"
-	sudo dpkg -i cuda-repo-ubuntu1604-8-0-local_8.0.44-1_amd64-deb
+	wget "https://developer.nvidia.com/compute/cuda/9.1/Prod/local_installers/cuda-repo-ubuntu1604-9-1-local_9.1.85-1_amd64"
+	sudo dpkg -i cuda-repo-ubuntu1604-9-1-local_9.1.85-1_amd64.deb
+	sudo apt-key add /var/cuda-repo-<version>/7fa2af80.pub
 	sudo apt-get -y update
 	sudo apt-get -y install cuda
 	printf "\nexport CUDA_HOME=/usr/local/cuda" >> ~/.bashrc
@@ -98,9 +99,9 @@ then
 	source ~/.bashrc
 
 	# install cudnn
-	# login to nvidia developer and download https://developer.nvidia.com/compute/machine-learning/cudnn/secure/v6.0/prod/8.0/cudnn-8.0-linux-x64-v6.0-tgz
+	# login to nvidia developer and download https://developer.nvidia.com/compute/machine-learning/cudnn/secure/v7.0.5/prod/9.1_20171129/cudnn-9.1-linux-x64-v7
 	cd ~/Downloads
-	tar xvzf cudnn-8.0-linux-x64-v6.0.tgz
+	tar xvzf cudnn-9.1-linux-x64-v7.tgz
 	sudo cp -P cuda/include/cudnn.h /usr/local/cuda/include
 	sudo cp -P cuda/lib64/libcudnn* /usr/local/cuda/lib64
 	sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
@@ -109,6 +110,6 @@ then
 
 	# clean up downloaded files
 	sudo rm -rf cuda
-	sudo rm cuda-repo-ubuntu1604-8-0-local_8.0.44-1_amd64-deb
-	sudo rm cudnn-8.0-linux-x64-v6.0.tgz
+	sudo rm cuda-repo-ubuntu1604-9-1-local_9.1.85-1_amd64.deb
+	sudo rm cudnn-9.1-linux-x64-v7.tgz
 fi
