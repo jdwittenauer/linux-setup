@@ -40,23 +40,23 @@ conda install -y scrapy
 conda install -y seaborn
 conda install -y spacy
 conda install -y opencv
-pip install --upgrade pip
-pip install --upgrade --ignore-installed setuptools
-pip install celery
-pip install deap
-pip install hyperopt
-pip install pattern
-pip install flask-socketio
-pip install pystan
-pip install fbprophet
-pip install tpot
+pip3 install --upgrade pip
+pip3 install --upgrade --ignore-installed setuptools
+pip3 install celery
+pip3 install deap
+pip3 install hyperopt
+pip3 install pattern
+pip3 install flask-socketio
+pip3 install pystan
+pip3 install fbprophet
+pip3 install tpot
 
 # install Tensorflow
 if [ "$GPU" = "TRUE" ]
 then
-	pip install --upgrade https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-1.4.1-cp36-cp36m-linux_x86_64.whl
+	pip3 install --upgrade https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-1.5.0-cp36-cp36m-linux_x86_64.whl
 else
-	pip install --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.4.1-cp36-cp36m-linux_x86_64.whl
+	pip3 install --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.5.0-cp36-cp36m-linux_x86_64.whl
 fi
 
 # create Tensorflow test file
