@@ -83,7 +83,7 @@ t0 = time.time()
 sess = tf.Session()
 sess.run(init)
 
-for step in xrange(1001):
+for step in range(1001):
     sess.run(train)
     if step % 100 == 0:
         print(step, sess.run(W), sess.run(b))
@@ -121,11 +121,10 @@ then
 	git clone https://github.com/jdwittenauer/linux-setup
 
 	# install and configure Pycharm
-	# create custom darcula theme with inconsolata font size 28
+	# create custom darcula theme with inconsolata font size 30
 	# install plugins
 	# configure github login
 	# set interpreter to Anaconda
-	# display line numbers
 	cd ~/Downloads
 	wget "https://download-cf.jetbrains.com/python/pycharm-community-2017.3.3.tar.gz"
 	tar -xzf pycharm-community-2017.3.3.tar.gz
@@ -134,12 +133,10 @@ then
 	bash pycharm.sh
 
 	# install and configure Intellij IDEA
-	# select plugins
-	# create custom darcula theme with inconsolata font size 28
+	# create custom darcula theme with inconsolata font size 30
+	# install plugins
 	# configure github login
 	# configure Java and Scala SDKs
-	# install and configure go plugin
-	# display line numbers
 	cd ~/Downloads
 	wget "https://download-cf.jetbrains.com/idea/ideaIC-2017.3.3.tar.gz"
 	tar -xzf ideaIC-2017.3.3.tar.gz
