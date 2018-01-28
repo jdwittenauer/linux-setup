@@ -29,9 +29,10 @@ wget "https://repo.continuum.io/archive/Anaconda3-5.0.1-Linux-x86_64.sh"
 bash Anaconda3-5.0.1-Linux-x86_64.sh -b -p $HOME/anaconda
 printf "\nexport PATH=\$PATH:\$HOME/anaconda/bin" >> ~/.bashrc
 source ~/.bashrc
+rm Anaconda3-5.0.1-Linux-x86_64.sh
 conda update -y conda
 conda update -y anaconda
-conda update --all
+conda update -y --all
 conda install -y biopython
 conda install -y gensim
 conda install -y pydot
@@ -40,23 +41,23 @@ conda install -y scrapy
 conda install -y seaborn
 conda install -y spacy
 conda install -y opencv
-pip3 install --upgrade pip
-pip3 install --upgrade --ignore-installed setuptools
-pip3 install celery
-pip3 install deap
-pip3 install hyperopt
-pip3 install pattern
-pip3 install flask-socketio
-pip3 install pystan
-pip3 install fbprophet
-pip3 install tpot
+~/anaconda/bin/pip install --upgrade pip
+~/anaconda/bin/pip install --upgrade --ignore-installed setuptools
+~/anaconda/bin/pip install celery
+~/anaconda/bin/pip install deap
+~/anaconda/bin/pip install hyperopt
+~/anaconda/bin/pip install pattern
+~/anaconda/bin/pip install flask-socketio
+~/anaconda/bin/pip install pystan
+~/anaconda/bin/pip install fbprophet
+~/anaconda/bin/pip install tpot
 
 # install Tensorflow
 if [ "$GPU" = "TRUE" ]
 then
-	pip3 install --upgrade https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-1.5.0-cp36-cp36m-linux_x86_64.whl
+	~/anaconda/bin/pip install --upgrade https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-1.5.0-cp36-cp36m-linux_x86_64.whl
 else
-	pip3 install --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.5.0-cp36-cp36m-linux_x86_64.whl
+	~/anaconda/bin/pip install --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.5.0-cp36-cp36m-linux_x86_64.whl
 fi
 
 # create Tensorflow test file
@@ -117,6 +118,7 @@ then
 	git clone https://github.com/jdwittenauer/alpha
 	git clone https://github.com/jdwittenauer/hackerrank
 	git clone https://github.com/jdwittenauer/sandbox
+	git clone https://github.com/jdwittenauer/linux-setup
 
 	# install and configure Pycharm
 	# create custom darcula theme with inconsolata font size 28
@@ -141,7 +143,12 @@ then
 	cd ~/Downloads
 	wget "https://download-cf.jetbrains.com/idea/ideaIC-2017.3.3.tar.gz"
 	tar -xzf ideaIC-2017.3.3.tar.gz
-	mv ~/Downloads/idea-IC-163.9166.29 ~/idea
+	mv ~/Downloads/idea-IC-173.4301.25 ~/idea
 	cd ~/idea/bin
 	bash idea.sh
+
+	# clean up downloaded files
+	cd ~/Downloads
+	rm pycharm-community-2017.3.3.tar.gz
+	rm ideaIC-2017.3.3.tar.gz
 fi

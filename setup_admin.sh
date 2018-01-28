@@ -15,7 +15,7 @@ then
 	# change backgroud image
 	# adjust mouse speed
 	# install and configure tilda (height 100, width 100, transparency 40, always on top = FALSE)
-	# pin tilda to task bar by finding via search and dragging to bar
+	# pin to task bar by finding via search and dragging to bar
 	sudo apt-get -y install tilda
 fi
 
@@ -64,6 +64,7 @@ sudo make PREFIX=/usr/local install
 sudo apt-get -y install libopencv-dev python-opencv
 
 # install Chrome
+# pin to task bar by finding via search and dragging to bar
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i --force-depends google-chrome-stable_current_amd64.deb
 sudo apt-get -y update
@@ -83,14 +84,11 @@ then
 	sudo apt-get -y upgrade
 	sudo apt-get -y autoremove
 
-	# check GPU status
-	nvidia-smi
-
 	# install cuda
 	cd ~/Downloads
-	wget "https://developer.nvidia.com/compute/cuda/9.1/Prod/local_installers/cuda-repo-ubuntu1604-9-1-local_9.1.85-1_amd64"
-	sudo dpkg -i cuda-repo-ubuntu1604-9-1-local_9.1.85-1_amd64.deb
-	sudo apt-key add /var/cuda-repo-<version>/7fa2af80.pub
+	wget "https://developer.nvidia.com/compute/cuda/9.0/Prod/local_installers/cuda-repo-ubuntu1604-9-0-local_9.0.176-1_amd64-deb"
+	sudo dpkg -i cuda-repo-ubuntu1604-9-0-local_9.0.176-1_amd64-deb
+	sudo apt-key add /var/cuda-repo-9-0-local/7fa2af80.pub
 	sudo apt-get -y update
 	sudo apt-get -y install cuda
 	printf "\nexport CUDA_HOME=/usr/local/cuda" >> ~/.bashrc
@@ -99,9 +97,9 @@ then
 	source ~/.bashrc
 
 	# install cudnn
-	# login to nvidia developer and download https://developer.nvidia.com/compute/machine-learning/cudnn/secure/v7.0.5/prod/9.1_20171129/cudnn-9.1-linux-x64-v7
+	# login to nvidia developer and download https://developer.nvidia.com/compute/machine-learning/cudnn/secure/v7.0.5/prod/9.0_20171129/cudnn-9.0-linux-x64-v7
 	cd ~/Downloads
-	tar xvzf cudnn-9.1-linux-x64-v7.tgz
+	tar xvzf cudnn-9.0-linux-x64-v7.tgz
 	sudo cp -P cuda/include/cudnn.h /usr/local/cuda/include
 	sudo cp -P cuda/lib64/libcudnn* /usr/local/cuda/lib64
 	sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
@@ -109,7 +107,8 @@ then
 	source ~/.bashrc
 
 	# clean up downloaded files
+	cd ~/Downloads
 	sudo rm -rf cuda
-	sudo rm cuda-repo-ubuntu1604-9-1-local_9.1.85-1_amd64.deb
-	sudo rm cudnn-9.1-linux-x64-v7.tgz
+	sudo rm cuda-repo-ubuntu1604-9-0-local_9.0.176-1_amd64-deb
+	sudo rm cudnn-9.0-linux-x64-v7.tgz
 fi
