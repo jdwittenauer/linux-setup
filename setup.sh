@@ -120,8 +120,8 @@ then
 	git clone https://github.com/jdwittenauer/sandbox
 	git clone https://github.com/jdwittenauer/linux-setup
 
-	# install and configure Pycharm
-	# create custom darcula theme with inconsolata font size 30
+	# install and configure PyCharm
+	# darcula theme with inconsolata font size 30
 	# install plugins
 	# configure github login
 	# set interpreter to Anaconda
@@ -133,7 +133,7 @@ then
 	bash pycharm.sh
 
 	# install and configure Intellij IDEA
-	# create custom darcula theme with inconsolata font size 30
+	# darcula theme with inconsolata font size 30
 	# install plugins
 	# configure github login
 	# configure Java and Scala SDKs

@@ -10,15 +10,6 @@ GPU="TRUE"
 # allow automated installations
 export DEBIAN_FRONTEND=noninteractive
 
-if [ "$GUI" = "TRUE" ]
-then
-	# change backgroud image
-	# adjust mouse speed
-	# install and configure tilda (height 100, width 100, transparency 40, always on top = FALSE)
-	# pin to task bar by finding via search and dragging to bar
-	sudo apt-get -y install tilda
-fi
-
 # initial setup
 cd ~
 mkdir blas
@@ -36,6 +27,7 @@ sudo apt-get -y install openjdk-8-jre openjdk-8-jdk
 sudo apt-get -y install gfortran
 
 # install Scala
+cd ~/Downloads
 wget "http://downloads.lightbend.com/scala/2.12.4/scala-2.12.4.deb"
 sudo dpkg -i scala-2.12.4.deb
 sudo apt-get -y update
@@ -65,16 +57,35 @@ sudo apt-get -y install libopencv-dev python-opencv
 
 # install Chrome
 # pin to task bar by finding via search and dragging to bar
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+cd ~/Downloads
+wget "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
 sudo dpkg -i --force-depends google-chrome-stable_current_amd64.deb
 sudo apt-get -y update
 sudo apt-get -y install -f
 printf "\nexport BROWSER=google-chrome" >> ~/.bashrc
+rm -rf google-chrome-stable_current_amd64.deb
 
 # install inconsolata font
 sudo apt-get -y install fonts-inconsolata
 sudo fc-cache -fv
 sudo apt-get -y autoremove
+
+if [ "$GUI" = "TRUE" ]
+then
+	# change backgroud image
+	# adjust mouse speed
+	# install and configure tilda (height 100, width 100, transparency 40, always on top = FALSE)
+	# pin to task bar by finding via search and dragging to bar
+	sudo apt-get -y install tilda
+
+	# install and configure Atom
+	cd ~/Downloads
+	wget "https://atom-installer.github.com/v1.23.3/atom-amd64.deb"
+	sudo dpkg -i atom-amd64.deb
+	sudo apt-get -y update
+	sudo apt-get -y install -f
+	rm -rf atom-amd64.deb
+fi
 
 if [ "$GPU" = "TRUE" ]
 then
