@@ -79,6 +79,7 @@ then
 	sudo apt-get -y install tilda
 
 	# install and configure Atom
+	# install go-plus, go-debug, platformio-ide-terminal
 	cd ~/Downloads
 	wget "https://atom-installer.github.com/v1.23.3/atom-amd64.deb"
 	sudo dpkg -i atom-amd64.deb
