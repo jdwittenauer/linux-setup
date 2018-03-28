@@ -48,6 +48,7 @@ conda install -y spacy
 ~/anaconda/bin/pip install flask-socketio
 ~/anaconda/bin/pip install keras
 ~/anaconda/bin/pip install hyperopt
+~/anaconda/bin/pip install ortools
 ~/anaconda/bin/pip install pattern
 ~/anaconda/bin/pip install pymc3
 ~/anaconda/bin/pip install pyro-ppl
