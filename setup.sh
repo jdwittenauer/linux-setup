@@ -9,6 +9,8 @@ GPU="TRUE"
 
 # allow automated installations
 export DEBIAN_FRONTEND=noninteractive
+
+# initial setup
 cd ~
 mkdir git
 mkdir data
@@ -59,10 +61,11 @@ conda install -y spacy
 ~/anaconda/bin/pip install --upgrade --ignore-installed setuptools
 if [ "$GPU" = "TRUE" ]
 then
-	conda install -y pytorch torchvision cuda90 -c pytorch
-	~/anaconda/bin/pip install --upgrade https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-1.5.0-cp36-cp36m-linux_x86_64.whl
+	conda install pytorch torchvision -c pytorch
+	~/anaconda/bin/pip install --upgrade https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-1.9.0-cp36-cp36m-linux_x86_64.whl
 else
-	~/anaconda/bin/pip install --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.5.0-cp36-cp36m-linux_x86_64.whl
+	conda install pytorch-cpu torchvision-cpu -c pytorch
+	~/anaconda/bin/pip install --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.9.0-cp36-cp36m-linux_x86_64.whl
 fi
 
 # download and install git repos
