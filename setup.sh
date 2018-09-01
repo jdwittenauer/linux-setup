@@ -57,13 +57,10 @@ conda install -y spacy
 ~/anaconda/bin/pip install --upgrade pip
 ~/anaconda/bin/pip install celery
 ~/anaconda/bin/pip install deap
-~/anaconda/bin/pip install fbprophet
-~/anaconda/bin/pip install keras
 ~/anaconda/bin/pip install hyperopt
 ~/anaconda/bin/pip install ortools
-~/anaconda/bin/pip install pattern
+~/anaconda/bin/pip install pattern3
 ~/anaconda/bin/pip install pymc3
-~/anaconda/bin/pip install pyro-ppl
 ~/anaconda/bin/pip install pystan
 ~/anaconda/bin/pip install xgboost
 
@@ -81,6 +78,11 @@ else
 	conda install -y pytorch-cpu torchvision-cpu -c pytorch
 	~/anaconda/bin/pip install tensorflow
 fi
+
+# install more packages
+~/anaconda/bin/pip install fbprophet
+~/anaconda/bin/pip install keras
+~/anaconda/bin/pip install pyro-ppl
 
 # download and install custom library
 cd ~/git
@@ -115,7 +117,7 @@ then
 	git clone https://github.com/jdwittenauer/ipython-notebooks
 	git clone https://github.com/jdwittenauer/kaggle
 	git clone https://github.com/jdwittenauer/linux-setup
-	git clone https://github.com/jdwittenauer/little-compiler
+	git clone https://github.com/jdwittenauer/littlecompiler
 	git clone https://github.com/jdwittenauer/or-tools-examples
 	git clone https://github.com/jdwittenauer/ppm-cut-detection
 	git clone https://github.com/jdwittenauer/projecteuler-solutions

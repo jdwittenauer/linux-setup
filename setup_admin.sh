@@ -69,7 +69,6 @@ sudo apt -y update
 sudo apt -y install docker-ce
 
 # install Chrome
-# pin to task bar by finding via search and dragging to bar
 cd ~/Downloads
 wget "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
 sudo dpkg -i --force-depends google-chrome-stable_current_amd64.deb
@@ -95,8 +94,8 @@ if [ "$GUI" = "TRUE" ]
 then
 	# change backgroud image
 	# adjust mouse speed
-	# install and configure tilda (height 100, width 100, transparency 40, always on top = FALSE)
-	# pin to task bar by finding via search and dragging to bar
+	# configure sound
+	# install and configure tilda (height 100, width 100, transparency 40, always on top = FALSE, do not show in task bar = FALSE)
 	sudo apt -y install tilda
 
 	# install VS Code
@@ -135,9 +134,9 @@ then
 	source ~/.bashrc
 
 	# install cudnn
-	# login to nvidia developer and download https://developer.nvidia.com/compute/machine-learning/cudnn/secure/v7.0.5/prod/9.0_20171129/cudnn-9.0-linux-x64-v7
+	# login to nvidia developer and download for linux
 	cd ~/Downloads
-	tar xvzf cudnn-9.0-linux-x64-v7.tgz
+	tar xvzf cudnn-9.0-linux-x64-v7.2.1.38.tgz
 	sudo cp -P cuda/include/cudnn.h /usr/local/cuda/include
 	sudo cp -P cuda/lib64/libcudnn* /usr/local/cuda/lib64
 	sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
@@ -148,7 +147,7 @@ then
 	cd ~/Downloads
 	sudo rm -rf cuda
 	sudo rm cuda-repo-ubuntu1604-9-0-local_9.0.176-1_amd64-deb
-	sudo rm cudnn-9.0-linux-x64-v7.tgz
+	sudo rm cudnn-9.0-linux-x64-v7.2.1.38.tgz
 fi
 
 sudo apt -y autoremove
