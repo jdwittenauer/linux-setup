@@ -1,0 +1,130 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build (C)",
+            "type": "shell",
+            "command": "gcc",
+            "args": [
+                "file.c"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Build (C++)",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "file.cpp"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Run (C/C++)",
+            "type": "shell",
+            "command": "a.out"
+        },
+        {
+            "label": "Build (C#)",
+            "type": "shell",
+            "command": "dotnet",
+            "args": [
+                "build"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Run (C#)",
+            "type": "shell",
+            "command": "dotnet",
+            "args": [
+                "run"
+            ]
+        },
+        {
+            "label": "Build (Go)",
+            "type": "shell",
+            "command": "go",
+            "args": [
+                "build"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Run (Go)",
+            "type": "shell",
+            "command": "go",
+            "args": [
+                "run"
+            ]
+        },
+        {
+            "label": "Build (Java)",
+            "type": "shell",
+            "command": "javac",
+            "args": [
+                "file.java"
+            ],
+            "group": "build"
+        },
+        {
+            "label": "Run (Java)",
+            "type": "shell",
+            "command": "java",
+            "args": [
+                "file"
+            ]
+        },
+        {
+            "label": "Build (Scala)",
+            "type": "shell",
+            "command": "scalac",
+            "args": [
+                "file.scala"
+            ],
+            "group": "build"
+        },
+        {
+            "label": "Run (Scala)",
+            "type": "shell",
+            "command": "scala",
+            "args": [
+                "package.file"
+            ]
+        },
+        {
+            "label": "Build (Maven)",
+            "type": "shell",
+            "command": "mvn",
+            "args": [
+                "compile"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Package (Maven)",
+            "type": "shell",
+            "command": "mvn",
+            "args": [
+                "clean",
+                "package"
+            ],
+            "group": "build"
+        }
+    ]
+}

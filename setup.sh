@@ -19,10 +19,12 @@ mkdir go
 cd go
 mkdir workspace
 
-# add Go path variables
+# add path variables
+printf "\nexport JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64" >> ~/.bashrc
 printf "\nexport GOROOT=/usr/lib/go" >> ~/.bashrc
 printf "\nexport GOPATH=\$HOME/go/workspace" >> ~/.bashrc
 printf "\nexport PATH=\$PATH:\$GOROOT/bin:\$GOPATH/bin" >> ~/.bashrc
+printf "\nexport BROWSER=google-chrome" >> ~/.bashrc
 source ~/.bashrc
 
 # install Julia
@@ -38,7 +40,7 @@ rm -rf julia-1.0.0-linux-x86_64.tar.gz
 cd ~/Downloads
 wget "https://repo.anaconda.com/archive/Anaconda3-5.2.0-Linux-x86_64.sh"
 bash Anaconda3-5.2.0-Linux-x86_64.sh -b -p $HOME/anaconda
-printf "\nexport PATH=\$PATH:\$HOME/anaconda/bin" >> ~/.bashrc
+printf "\nexport PATH=\$HOME/anaconda/bin:\$PATH" >> ~/.bashrc
 source ~/.bashrc
 rm Anaconda3-5.2.0-Linux-x86_64.sh
 
@@ -54,35 +56,35 @@ conda install -y pyodbc
 conda install -y scrapy
 conda install -y seaborn
 conda install -y spacy
-~/anaconda/bin/pip install --upgrade pip
-~/anaconda/bin/pip install celery
-~/anaconda/bin/pip install deap
-~/anaconda/bin/pip install hyperopt
-~/anaconda/bin/pip install ortools
-~/anaconda/bin/pip install pattern3
-~/anaconda/bin/pip install pymc3
-~/anaconda/bin/pip install pystan
-~/anaconda/bin/pip install xgboost
+pip install --upgrade pip
+pip install celery
+pip install deap
+pip install hyperopt
+pip install ortools
+pip install pattern3
+pip install pymc3
+pip install pystan
+pip install xgboost
 
 # install and configure jupyter theme
-~/anaconda/bin/pip install jupyterthemes
+pip install jupyterthemes
 jt -t chesterish -fs 10 -ofs 95 -cellw 80% -lineh 130 -T
 
 # install tensor libraries
-~/anaconda/bin/pip install --upgrade --ignore-installed setuptools
+pip install --upgrade --ignore-installed setuptools
 if [ "$GPU" = "TRUE" ]
 then
 	conda install -y pytorch torchvision -c pytorch
-	~/anaconda/bin/pip install tensorflow-gpu
+	pip install tensorflow-gpu
 else
 	conda install -y pytorch-cpu torchvision-cpu -c pytorch
-	~/anaconda/bin/pip install tensorflow
+	pip install tensorflow
 fi
 
 # install more packages
-~/anaconda/bin/pip install fbprophet
-~/anaconda/bin/pip install keras
-~/anaconda/bin/pip install pyro-ppl
+pip install fbprophet
+pip install keras
+pip install pyro-ppl
 
 # download and install custom library
 cd ~/git
@@ -124,4 +126,14 @@ then
 	git clone https://github.com/jdwittenauer/sandbox
 	git clone https://github.com/jdwittenauer/selforganizingmap-demo
 	git clone https://github.com/jdwittenauer/twitter-viz-demo
+fi
+
+if [ "$GPU" = "TRUE" ]
+then
+	# add path variables
+	printf "\nexport CUDA_HOME=/usr/local/cuda" >> ~/.bashrc
+	printf "\nexport CUDA_ROOT=/usr/local/cuda" >> ~/.bashrc
+	printf "\nexport PATH=\$PATH:/usr/local/cuda/bin" >> ~/.bashrc
+	printf "\nexport LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64" >> ~/.bashrc
+	source ~/.bashrc
 fi

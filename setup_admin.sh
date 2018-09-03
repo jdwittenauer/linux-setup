@@ -20,8 +20,12 @@ sudo apt -y install git
 git config --global user.name "John Wittenauer"
 git config --global user.email jdwittenauer@gmail.com
 
+# install gcc
+sudo apt -y install gcc-6
+sudo apt -y install g++-6
+
 # install JDK
-sudo apt -y install openjdk-11-jre openjdk-11-jdk
+sudo apt -y install openjdk-11-jre openjdk-11-jdk maven
 
 # install fortran compiler
 sudo apt -y install gfortran
@@ -41,7 +45,7 @@ wget "http://downloads.lightbend.com/scala/2.12.6/scala-2.12.6.deb"
 sudo dpkg -i scala-2.12.6.deb
 sudo apt -y update
 sudo apt -y install scala
-rm -rf scala-2.12.6.deb
+sudo rm scala-2.12.6.deb
 
 # install sbt
 echo "deb https://dl.bintray.com/sbt/debian /" | sudo tee -a /etc/apt/sources.list.d/sbt.list
@@ -49,11 +53,14 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 642AC823
 sudo apt -y update
 sudo apt -y install sbt
 
-# install Mono
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-echo "deb https://download.mono-project.com/repo/ubuntu stable-bionic main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
+# install .NET
+cd ~/Downloads
+wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb
+sudo dpkg -i packages-microsoft-prod.deb
+sudo apt -y install apt-transport-https
 sudo apt -y update
-sudo apt -y install mono-devel
+sudo apt -y install dotnet-sdk-2.1
+sudo rm packages-microsoft-prod.deb
 
 # install node.js
 sudo apt -y install curl
@@ -74,8 +81,7 @@ wget "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
 sudo dpkg -i --force-depends google-chrome-stable_current_amd64.deb
 sudo apt -y update
 sudo apt -y install -f
-printf "\nexport BROWSER=google-chrome" >> ~/.bashrc
-rm -rf google-chrome-stable_current_amd64.deb
+sudo rm google-chrome-stable_current_amd64.deb
 
 # install inconsolata font
 sudo apt -y install fonts-inconsolata
@@ -95,10 +101,15 @@ then
 	# change backgroud image
 	# adjust mouse speed
 	# configure sound
+	# lock screen off
+	# time format to AM/PM
+
 	# install and configure tilda (height 100, width 100, transparency 40, always on top = FALSE, do not show in task bar = FALSE)
 	sudo apt -y install tilda
 
 	# install VS Code
+	# copy settings file to ~/.config/Code/User/settings.json
+	# install Go packages
 	cd ~/Downloads
 	curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
 	sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
@@ -111,10 +122,6 @@ fi
 
 if [ "$GPU" = "TRUE" ]
 then
-	# install gcc
-	sudo apt -y install gcc-6
-	sudo apt -y install g++-6
-
 	# update GPU driver
 	sudo add-apt-repository ppa:graphics-drivers/ppa -y
 	sudo apt -y update
@@ -128,10 +135,6 @@ then
 	sudo apt-key add /var/cuda-repo-9-0-local/7fa2af80.pub
 	sudo apt -y update
 	sudo apt -y install cuda
-	printf "\nexport CUDA_HOME=/usr/local/cuda" >> ~/.bashrc
-	printf "\nexport CUDA_ROOT=/usr/local/cuda" >> ~/.bashrc
-	printf "\nexport PATH=\$PATH:/usr/local/cuda/bin" >> ~/.bashrc
-	source ~/.bashrc
 
 	# install cudnn
 	# login to nvidia developer and download for linux
@@ -140,8 +143,6 @@ then
 	sudo cp -P cuda/include/cudnn.h /usr/local/cuda/include
 	sudo cp -P cuda/lib64/libcudnn* /usr/local/cuda/lib64
 	sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
-	printf "\nexport LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64" >> ~/.bashrc
-	source ~/.bashrc
 
 	# clean up downloaded files
 	cd ~/Downloads
