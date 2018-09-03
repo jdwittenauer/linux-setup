@@ -7,7 +7,6 @@
     "window.menuBarVisibility": "default",
     "window.zoomLevel": 0,
     "java.errors.incompleteClasspath.severity": "ignore",
-    "python.pythonPath": "/home/john/anaconda/bin/python",
     "launch": {
         "version": "0.2.0",
         "configurations": [
