@@ -68,7 +68,7 @@ pip install xgboost
 
 # install and configure jupyter theme
 pip install jupyterthemes
-jt -t chesterish -fs 10 -ofs 95 -cellw 80% -lineh 130 -T
+jt -t chesterish -fs 11 -ofs 10 -cellw 80% -lineh 130 -T
 
 # install tensor libraries
 pip install --upgrade --ignore-installed setuptools
