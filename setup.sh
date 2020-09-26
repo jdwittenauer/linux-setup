@@ -64,7 +64,6 @@ pip install ortools
 pip install pattern3
 pip install pymc3
 pip install pystan
-pip install xgboost
 
 # install and configure jupyter theme
 pip install jupyterthemes
@@ -82,9 +81,12 @@ else
 fi
 
 # install more packages
+pip install fastai
 pip install fbprophet
 pip install keras
 pip install pyro-ppl
+pip install ta
+pip install xgboost
 
 # download and install custom library
 cd ~/git
