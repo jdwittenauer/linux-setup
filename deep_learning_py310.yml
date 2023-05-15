@@ -1,13 +1,15 @@
 # Run these commands to create an environment:
-# conda env create -f deep_learning_py310.yml
-# conda activate deep_learning_py310
-# ipython kernel install --user --name deep_learning_py310 --display-name "Python 3.10 - Deep Learning"
+### conda env create -f deep_learning_py310.yml
+### conda activate deep_learning_py310
+### ipython kernel install --user --name deep_learning_py310 --display-name "Python 3.10 - Deep Learning"
 # Run these commands to remove an environment:
-# conda deactivate
-# conda remove -n deep_learning_py310 --all
-# jupyter kernelspec uninstall deep_learning_py310
+### conda deactivate
+### conda remove -n deep_learning_py310 --all
+### jupyter kernelspec uninstall deep_learning_py310
+# Run this to clean up conda downloads:
+### conda clean --all
 # Run this to launch the notebook server:
-# jupyter notebook
+### jupyter notebook
 name: deep_learning_py310
 channels:
   - anaconda
@@ -21,8 +23,8 @@ dependencies:
   - pip=22.2.2
   - setuptools=65.5.0
   - sqlite=3.39.3
-  - conda-forge::cudatoolkit=11.2
-  - conda-forge::cudnn=8.1
+  - conda-forge::cudatoolkit=11.8
+  - conda-forge::cudnn=8.8
   - pip:
     - accelerate==0.18.0
     - altair==4.2.2
@@ -54,12 +56,12 @@ dependencies:
     - sqlalchemy==1.4.43
     - stable-baselines3==1.8.0
     - statsmodels==0.13.5
-    - tensorflow==2.10.0
-    - torch==2.0.0
-    - torchaudio==2.0.1
-    - torchdata==0.6.0
-    - torchtext==0.15.1
-    - torchvision==0.15.1
+    - tensorflow==2.12.0
+    - torch==2.0.1
+    - torchaudio==2.0.2
+    - torchdata==0.6.1
+    - torchtext==0.15.2
+    - torchvision==0.15.2
     - tqdm==4.65.0
     - transformers==4.27.3
     - ujson==5.7.0
