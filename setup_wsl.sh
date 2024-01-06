@@ -21,9 +21,10 @@ git config --global user.email jdwittenauer@gmail.com
 # install MySQL
 sudo apt -y install mysql-server
 
-# install node.js
-sudo apt -y install nodejs
-sudo apt -y install npm
+# install Node
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+source ~/.bashrc
+nvm install v20.10.0
 
 # clean up old packages
 sudo apt -y autoremove
