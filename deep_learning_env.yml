@@ -1,28 +1,23 @@
 # Run these commands to create an environment:
-### conda env create -f deep_learning_py310.yml
-### conda activate deep_learning_py310
-### ipython kernel install --user --name deep_learning_py310 --display-name "Python 3.10 - Deep Learning"
+### conda env create -f deep_learning_env.yml
+### conda activate deep_learning_env
+### ipython kernel install --user --name deep_learning_env --display-name "Python 3.11 - Deep Learning"
 # Run these commands to remove an environment:
 ### conda deactivate
-### conda remove -n deep_learning_py310 --all
-### jupyter kernelspec uninstall deep_learning_py310
+### conda remove -n deep_learning_env --all
+### jupyter kernelspec uninstall deep_learning_env
 # Run this to clean up conda downloads:
 ### conda clean --all
 # Run this to launch the notebook server:
 ### jupyter notebook
-name: deep_learning_py310
+name: deep_learning_env
 channels:
   - anaconda
   - defaults
 dependencies:
-  - python=3.10.12
-  - ipykernel
-  - ipython
-  - jupyter_client
-  - jupyter_core
+  - python=3.11.7
   - pip
   - setuptools
-  - sqlite
   - conda-forge::cudatoolkit
   - conda-forge::cudnn
   - pip:
@@ -33,12 +28,16 @@ dependencies:
     - docker
     - evaluate
     - fastai
-    - flask
+    - fastapi
     - gensim
     - gluonts
     - gymnasium
     - imageio
+    - ipykernel
+    - ipython
     - joblib
+    - jupyter_client
+    - jupyter_core
     - langchain
     - llama-index
     - matplotlib
@@ -52,8 +51,10 @@ dependencies:
     - prophet
     - pyarrow
     - pyodbc
+    - pypdf
     - pyro-ppl
     - pytorch-lightning
+    - rank-bm25
     - seaborn
     - scikit-image
     - scikit-learn
@@ -74,5 +75,6 @@ dependencies:
     - tqdm
     - transformers
     - ujson
+    - uvicorn
     - xgboost
-prefix: /anaconda/envs/deep_learning_py310
+prefix: /anaconda/envs/deep_learning_env

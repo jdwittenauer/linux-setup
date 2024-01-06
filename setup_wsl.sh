@@ -38,7 +38,7 @@ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh -b -p $HOME/miniconda
 rm Miniconda3-latest-Linux-x86_64.sh
 printf "\nexport PATH=\$HOME/miniconda/bin:\$PATH" >> ~/.bashrc
-printf "\nexport LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:/home/jdwittenauer/miniconda/envs/deep_learning_py310/lib" >> ~/.bashrc
+printf "\nexport LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:/home/jdwittenauer/miniconda/envs/deep_learning_env/lib" >> ~/.bashrc
 source ~/.bashrc
 conda init bash
 
@@ -51,6 +51,7 @@ git clone https://github.com/jdwittenauer/dotnet-sandbox
 git clone https://github.com/jdwittenauer/hackerrank
 git clone https://github.com/jdwittenauer/hadoop-training
 git clone https://github.com/jdwittenauer/insight-net
+git clone https://github.com/jdwittenauer/ionyx
 git clone https://github.com/jdwittenauer/ipython-notebooks
 git clone https://github.com/jdwittenauer/kaggle
 git clone https://github.com/jdwittenauer/linux-setup
@@ -58,6 +59,7 @@ git clone https://github.com/jdwittenauer/littlecompiler
 git clone https://github.com/jdwittenauer/or-tools-examples
 git clone https://github.com/jdwittenauer/ppm-cut-detection
 git clone https://github.com/jdwittenauer/projecteuler-solutions
+git clone https://github.com/jdwittenauer/rag-project
 git clone https://github.com/jdwittenauer/sandbox
 git clone https://github.com/jdwittenauer/selforganizingmap-demo
 git clone https://github.com/jdwittenauer/twitter-viz-demo
