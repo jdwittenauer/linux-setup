@@ -23,6 +23,7 @@ dependencies:
   - pip:
     - accelerate
     - altair
+    - bitsandbytes
     - chromadb
     - datasets
     - docker
