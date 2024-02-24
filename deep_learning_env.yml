@@ -36,6 +36,7 @@ dependencies:
     - imageio
     - ipykernel
     - ipython
+    - ipywidgets
     - joblib
     - jupyter_client
     - jupyter_core
@@ -62,6 +63,7 @@ dependencies:
     - scipy
     - scrapy
     - sentencepiece
+    - sentence-transformers
     - spacy
     - sqlalchemy
     - stable-baselines3
