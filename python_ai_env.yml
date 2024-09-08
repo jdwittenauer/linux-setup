@@ -1,21 +1,21 @@
 # Run these commands to create an environment:
-### conda env create -f deep_learning_env.yml
-### conda activate deep_learning_env
-### ipython kernel install --user --name deep_learning_env --display-name "Python 3.11 - Deep Learning"
+### conda env create -f python_ai_env.yml
+### conda activate python_ai_env
+### ipython kernel install --user --name python_ai_env --display-name "Python 3.11 - AI"
 # Run these commands to remove an environment:
 ### conda deactivate
-### conda remove -n deep_learning_env --all
-### jupyter kernelspec uninstall deep_learning_env
+### conda remove -n python_ai_env --all
+### jupyter kernelspec uninstall python_ai_env
 # Run this to clean up conda downloads:
 ### conda clean --all
 # Run this to launch the notebook server:
 ### jupyter notebook
-name: deep_learning_env
+name: python_ai_env
 channels:
   - anaconda
   - defaults
 dependencies:
-  - python=3.11.7
+  - python=3.11.9
   - pip
   - setuptools
   - conda-forge::cudatoolkit
@@ -23,9 +23,12 @@ dependencies:
   - pip:
     - accelerate
     - altair
+    - autoawq
+    - auto-gptq
     - bitsandbytes
     - chromadb
     - datasets
+    - diffusers
     - docker
     - evaluate
     - fastai
@@ -41,12 +44,14 @@ dependencies:
     - jupyter_client
     - jupyter_core
     - langchain
+    - langgraph
     - llama-index
     - matplotlib
     - nltk
     - notebook
     - numpy
     - openai
+    - optimum
     - pandas
     - peft
     - plotly
@@ -69,6 +74,7 @@ dependencies:
     - stable-baselines3
     - statsmodels
     - tensorflow
+    - tf-keras
     - tiktoken
     - torch
     - torchaudio
@@ -79,5 +85,6 @@ dependencies:
     - transformers
     - ujson
     - uvicorn
+    - vllm
     - xgboost
-prefix: /anaconda/envs/deep_learning_env
+prefix: /anaconda/envs/python_ai_env
