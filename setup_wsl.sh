@@ -45,6 +45,7 @@ conda init bash
 
 # download additional git repos
 cd ~/source
+git clone https://github.com/jdwittenauer/ai-news-agent
 git clone https://github.com/jdwittenauer/alpha
 git clone https://github.com/jdwittenauer/colab
 git clone https://github.com/jdwittenauer/blogit
@@ -60,7 +61,6 @@ git clone https://github.com/jdwittenauer/littlecompiler
 git clone https://github.com/jdwittenauer/or-tools-examples
 git clone https://github.com/jdwittenauer/ppm-cut-detection
 git clone https://github.com/jdwittenauer/projecteuler-solutions
-git clone https://github.com/jdwittenauer/rag-project
 git clone https://github.com/jdwittenauer/sandbox
 git clone https://github.com/jdwittenauer/selforganizingmap-demo
 git clone https://github.com/jdwittenauer/twitter-viz-demo
