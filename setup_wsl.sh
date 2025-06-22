@@ -22,9 +22,9 @@ git config --global user.email jdwittenauer@gmail.com
 sudo apt -y install mysql-server
 
 # install Node
-wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 source ~/.bashrc
-nvm install v20.10.0
+nvm install v24.2.0
 
 # clean up old packages
 sudo apt -y autoremove
@@ -34,12 +34,25 @@ cd ~
 mkdir source
 mkdir data
 
+# install CUDA
+wget https://developer.download.nvidia.com/compute/cuda/repos/wsl-ubuntu/x86_64/cuda-wsl-ubuntu.pin
+sudo mv cuda-wsl-ubuntu.pin /etc/apt/preferences.d/cuda-repository-pin-600
+wget https://developer.download.nvidia.com/compute/cuda/12.6.0/local_installers/cuda-repo-wsl-ubuntu-12-6-local_12.6.0-1_amd64.deb
+sudo dpkg -i cuda-repo-wsl-ubuntu-12-6-local_12.6.0-1_amd64.deb
+sudo cp /var/cuda-repo-wsl-ubuntu-12-6-local/cuda-*-keyring.gpg /usr/share/keyrings/
+sudo apt-get update
+sudo apt-get -y install cuda-toolkit-12-6
+rm cuda-repo-wsl-ubuntu-12-6-local_12.6.0-1_amd64.deb
+printf "\nexport PATH=/usr/local/cuda-12.6/bin:\$PATH" >> ~/.bashrc
+printf "\nexport LD_LIBRARY_PATH=/usr/local/cuda-12.6/lib64:\$LD_LIBRARY_PATH" >> ~/.bashrc
+source ~/.bashrc
+
+
 # install Miniconda
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh -b -p $HOME/miniconda
 rm Miniconda3-latest-Linux-x86_64.sh
 printf "\nexport PATH=\$HOME/miniconda/bin:\$PATH" >> ~/.bashrc
-printf "\nexport LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:/home/jdwittenauer/miniconda/envs/deep_learning_env/lib" >> ~/.bashrc
 source ~/.bashrc
 conda init bash
 

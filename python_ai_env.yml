@@ -1,90 +1,76 @@
-# Run these commands to create an environment:
+# Run to create an environment:
 ### conda env create -f python_ai_env.yml
 ### conda activate python_ai_env
 ### ipython kernel install --user --name python_ai_env --display-name "Python 3.11 - AI"
-# Run these commands to remove an environment:
+# Run to remove an environment:
 ### conda deactivate
 ### conda remove -n python_ai_env --all
 ### jupyter kernelspec uninstall python_ai_env
-# Run this to clean up conda downloads:
+# Run to clean up conda downloads:
 ### conda clean --all
-# Run this to launch the notebook server:
+# Run to launch the notebook server:
 ### jupyter notebook
+# Misc conda statements:
+### conda config --add channels defaults
+### conda update conda
+### conda update --all
+# Install flash attention separately:
+### pip install flash-attn==2.7.3 --no-build-isolation
 name: python_ai_env
 channels:
   - anaconda
-  - defaults
 dependencies:
-  - python=3.11.9
-  - pip
-  - setuptools
-  - conda-forge::cudatoolkit
-  - conda-forge::cudnn
+  - python=3.11.13
+  - pip=25.1
   - pip:
-    - accelerate
-    - altair
-    - autoawq
-    - auto-gptq
-    - bitsandbytes
-    - chromadb
-    - datasets
-    - diffusers
-    - docker
-    - evaluate
-    - fastai
-    - fastapi
-    - gensim
-    - gluonts
-    - gymnasium
-    - imageio
-    - ipykernel
-    - ipython
-    - ipywidgets
-    - joblib
-    - jupyter_client
-    - jupyter_core
-    - langchain
-    - langgraph
-    - llama-index
-    - matplotlib
-    - nltk
-    - notebook
-    - numpy
-    - openai
-    - optimum
-    - pandas
-    - peft
-    - plotly
-    - prophet
-    - pyarrow
-    - pyodbc
-    - pypdf
-    - pyro-ppl
-    - pytorch-lightning
-    - rank-bm25
-    - seaborn
-    - scikit-image
-    - scikit-learn
-    - scipy
-    - scrapy
-    - sentencepiece
-    - sentence-transformers
-    - spacy
-    - sqlalchemy
-    - stable-baselines3
-    - statsmodels
-    - tensorflow
-    - tf-keras
-    - tiktoken
-    - torch
-    - torchaudio
-    - torchdata
-    - torchtext
-    - torchvision
-    - tqdm
-    - transformers
-    - ujson
-    - uvicorn
-    - vllm
-    - xgboost
+    - accelerate>=1.6.0
+    - bitsandbytes>=0.46.0
+    - datasets>=3.3.0
+    - diffusers>=0.32.2
+    - docker>=7.1.0
+    - fastai>=2.8.1
+    - fastapi>=0.115.8
+    - gymnasium>=1.1.0
+    - imageio>=2.37.0
+    - ipykernel>=6.29.5
+    - ipython>=9.0.0
+    - ipywidgets>=8.1.6
+    - joblib>=1.5.0
+    - jupyter-client>=8.6.3
+    - langchain>=0.3.20
+    - langgraph>=0.4.0
+    - matplotlib>=3.10.1
+    - notebook>=7.3.3
+    - numpy>=2.2.2
+    - pandas>=2.3.0
+    - peft>=0.15.2
+    - plotly>=6.0.0
+    - pyarrow>=19.0.0
+    - pyodbc>=5.2.0
+    - pypdf>=5.6.0
+    - pyro-ppl>=1.9.1
+    - rank-bm25>=0.2.2
+    - seaborn>=0.13.2
+    - scikit-image>=0.25.2
+    - scikit-learn>=1.7.0
+    - scipy>=1.15.0
+    - scrapy>=2.13.0
+    - sentencepiece>=0.2.0
+    - sentence-transformers>=4.1.0
+    - setuptools>=80.0.0
+    - spacy>=3.8.4
+    - sqlalchemy>=2.0.40
+    - stable-baselines3>=2.6.0
+    - statsmodels>=0.14.4
+    - torch>=2.6.0
+    - torchaudio>=2.6.0
+    - torchdata>=0.11.0
+    - torchtext>=0.18.0
+    - torchvision>=0.22.0
+    - tqdm>=4.67.1
+    - transformers>=4.52.1
+    - ujson>=5.10.0
+    - uvicorn>=0.34.2
+    - vllm>=0.8.5
+    - xgboost>=3.0.0
 prefix: /anaconda/envs/python_ai_env
