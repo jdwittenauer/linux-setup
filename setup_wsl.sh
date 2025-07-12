@@ -26,6 +26,10 @@ wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 source ~/.bashrc
 nvm install v24.2.0
 
+# install Supabase
+curl -sL https://github.com/supabase/cli/releases/latest/download/supabase_linux_amd64.tar.gz | tar -xz
+sudo mv supabase /usr/local/bin
+
 # clean up old packages
 sudo apt -y autoremove
 
@@ -46,7 +50,6 @@ rm cuda-repo-wsl-ubuntu-12-6-local_12.6.0-1_amd64.deb
 printf "\nexport PATH=/usr/local/cuda-12.6/bin:\$PATH" >> ~/.bashrc
 printf "\nexport LD_LIBRARY_PATH=/usr/local/cuda-12.6/lib64:\$LD_LIBRARY_PATH" >> ~/.bashrc
 source ~/.bashrc
-
 
 # install Miniconda
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
