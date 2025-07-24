@@ -40,9 +40,11 @@ dependencies:
     - joblib>=1.5.0
     - jupyter-client>=8.6.3
     - langchain>=0.3.20
+    - langfuse>=>3.2.0
     - langgraph>=0.4.0
     - matplotlib>=3.10.1
     - mcp>=1.10.1
+    - mlflow>=3.1.0
     - notebook>=7.3.3
     - numpy>=2.2.2
     - openai>=1.90.0
@@ -52,6 +54,7 @@ dependencies:
     - psycopg>=3.2.9
     - pyarrow>=19.0.0
     - pydantic>=2.11.7
+    - pydantic-ai>=0.4.4
     - pyodbc>=5.2.0
     - pypdf>=5.6.0
     - pyro-ppl>=1.9.1
